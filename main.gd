@@ -13,8 +13,7 @@ var scoring = {0:1, 1:3, 2:6, 3:10, 4:15, 5:21, 6:28, 7:36, 8:45, 9:55, 10:66}
 func _ready():
 	curr_fruit = get_node("CurrentFruit")
 	next_fruit = get_node("NextFruit")
-	pass # Replace with function body.
-
+	_on_hud_end_game()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var pos = $Player.position + Vector2(0,40)
@@ -29,15 +28,10 @@ func _process(_delta):
 		next_fruit_state = randi_range(0,4)
 		next_fruit.set_state(next_fruit_state)
 
-func new_game():
-	get_tree().call_group("fruit", "queue_free")
-	score = 0
-	$Hud.update_score(score)
-	$Hud.show_message("Get Ready")
+func enable_game(state):
+	set_process(state)
+	$Player.set_process(state)
 	
-func game_over():
-	pass
-		
 func spawn_fruit(pos, state):
 	var fruit = fruit_scene.instantiate()
 	fruit.set_state(state)
@@ -50,6 +44,12 @@ func _on_fruit_fruit_match(new_pos, new_state):
 	score= score+scoring[new_state-1]
 	$Hud.update_score(score)
 
-func _on_dead_zone_area_entered(area):
-	new_game()
-	
+func _on_hud_end_game():
+	enable_game(false)
+	$Hud/StartButton.show() 
+
+func _on_hud_start_game():
+	get_tree().call_group("fruit", "queue_free")
+	score = 0
+	$Hud.update_score(score)
+	enable_game(true) 
