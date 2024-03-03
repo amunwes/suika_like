@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal start_game
+signal end_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,10 +29,10 @@ func _on_start_button_pressed():
 	start_game.emit()
 
 func _on_dead_zone_body_entered(body):
-	show_message("Game Over")
+	show_message("Game Over")	
+	end_game.emit()
+#	await $MessageTimer.timeout
 	
-	await $MessageTimer.timeout
-	
-	
-	await get_tree().create_timer(1.0).timeout
-	$StartButton.show() # Replace with function body. # Replace with function body.
+# code to wait 1 second before proceeding
+#	await get_tree().create_timer(1.0).timeout
+#	$StartButton.show() 

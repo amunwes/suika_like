@@ -23,15 +23,10 @@ position = Vector2(640, 360)
 texture = ExtResource("1_vtveo")
 
 [node name="NextFruit" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.804
-anchor_top = 0.111
-anchor_right = 0.804
-anchor_bottom = 0.111
-offset_left = -27.1199
-offset_top = -37.92
-offset_right = 127.88
-offset_bottom = 10.08
+offset_left = 1002.0
+offset_top = 41.0
+offset_right = 1157.0
+offset_bottom = 89.0
 text = "Next Fruit
 "
 label_settings = SubResource("LabelSettings_480l8")
@@ -42,22 +37,21 @@ scale = Vector2(0.690715, 0.690715)
 texture = ExtResource("1_tqj72")
 
 [node name="Score" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.152
-anchor_top = 0.194
-anchor_right = 0.152
-anchor_bottom = 0.194
-offset_left = -15.56
-offset_top = -39.68
-offset_right = 15.44
-offset_bottom = 39.32
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
+offset_left = 180.0
+offset_top = 98.0
+offset_right = 211.0
+offset_bottom = 177.0
+size_flags_horizontal = 0
 text = "0
 "
 label_settings = SubResource("LabelSettings_evo2a")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Bubble2" type="Sprite2D" parent="Score"]
+position = Vector2(13, 65)
+scale = Vector2(0.832295, 0.832295)
+texture = ExtResource("1_tqj72")
 
 [node name="Order" type="Label" parent="."]
 offset_left = 1021.0
@@ -147,11 +141,6 @@ scale = Vector2(0.407246, 0.407246)
 texture = ExtResource("3_f3hu3")
 region_enabled = true
 region_rect = Rect2(4, 4, 91, 91)
-
-[node name="Bubble2" type="Sprite2D" parent="."]
-position = Vector2(192, 165)
-scale = Vector2(0.832295, 0.832295)
-texture = ExtResource("1_tqj72")
 
 [node name="Message" type="Label" parent="."]
 anchors_preset = -1

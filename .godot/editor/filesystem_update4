@@ -5,3 +5,4 @@ res://player.tscn
 res://hud.tscn
 res://box.tscn
 res://addons/advanced_radial_menu/radial_menu_class.gd
+res://hud.gd
