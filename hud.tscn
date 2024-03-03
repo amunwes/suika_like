@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=3 uid="uid://yf8y54rsl1d8"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_nxh87"]
+[ext_resource type="Texture2D" uid="uid://c4frds7x6t8yx" path="res://suika/bubble.png" id="1_tqj72"]
+[ext_resource type="Texture2D" uid="uid://cmnhshkb4ux61" path="res://suika/suika ui reference.jpg" id="1_vtveo"]
+[ext_resource type="Texture2D" uid="uid://ojjopxkf8cmo" path="res://suika/faces.png" id="3_f3hu3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_480l8"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_evo2a"]
+font_size = 55
+
+[sub_resource type="LabelSettings" id="LabelSettings_gfg20"]
+font_size = 50
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_nxh87")
+
+[node name="SuikaUiReference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+texture = ExtResource("1_vtveo")
+
+[node name="NextFruit" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.804
+anchor_top = 0.111
+anchor_right = 0.804
+anchor_bottom = 0.111
+offset_left = -27.1199
+offset_top = -37.92
+offset_right = 127.88
+offset_bottom = 10.08
+text = "Next Fruit
+"
+label_settings = SubResource("LabelSettings_480l8")
+
+[node name="Bubble" type="Sprite2D" parent="NextFruit"]
+position = Vector2(80.9999, 141)
+scale = Vector2(0.690715, 0.690715)
+texture = ExtResource("1_tqj72")
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.152
+anchor_top = 0.194
+anchor_right = 0.152
+anchor_bottom = 0.194
+offset_left = -15.56
+offset_top = -39.68
+offset_right = 15.44
+offset_bottom = 39.32
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "0
+"
+label_settings = SubResource("LabelSettings_evo2a")
+horizontal_alignment = 1
+
+[node name="Order" type="Label" parent="."]
+offset_left = 1021.0
+offset_top = 304.0
+offset_right = 1164.0
+offset_bottom = 376.0
+text = "Order"
+label_settings = SubResource("LabelSettings_gfg20")
+
+[node name="Bubble3" type="Sprite2D" parent="Order"]
+position = Vector2(72, 197)
+texture = ExtResource("1_tqj72")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(86, -50)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(104, 4, 91, 91)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(101, 4)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(204, 4, 91, 91)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(86, 53)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(304, 4, 91, 91)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(50, 94)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(404, 4, 91, 91)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(-3, 104)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(504, 4, 91, 91)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(-59, 92)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(604, 4, 91, 91)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(-96, 54)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(704, 4, 91, 91)
+
+[node name="Sprite2D9" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(-111, 9)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(804, 4, 91, 91)
+
+[node name="Sprite2D10" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(-96, -48)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(904, 4, 91, 91)
+
+[node name="Sprite2D11" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(-58, -84)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(1004, 4, 91, 91)
+
+[node name="Sprite2D" type="Sprite2D" parent="Order/Bubble3"]
+position = Vector2(47, -84)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("3_f3hu3")
+region_enabled = true
+region_rect = Rect2(4, 4, 91, 91)
+
+[node name="Bubble2" type="Sprite2D" parent="."]
+position = Vector2(192, 165)
+scale = Vector2(0.832295, 0.832295)
+texture = ExtResource("1_tqj72")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.416
+anchor_right = 0.5
+anchor_bottom = 0.416
+offset_left = -2.0
+offset_top = -8.52002
+offset_right = 38.0
+offset_bottom = 14.48
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessageTimer" type="Timer" parent="."]
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -30.5
+offset_right = 121.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -1,0 +1,33 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1709420812
+box.tscn::PackedScene::5125145454020565240::1706066945::0::1::::<><>::uid://fasunrjofjy3::::res://wall.tscn
+DeadZone.gd::GDScript::-1::1702603728::0::1::::<>Area2D<>::
+export_presets.cfg::TextFile::-1::1702447881::0::1::::<><>::
+fruit.gd::GDScript::-1::1702430133::0::1::::<>RigidBody2D<>::
+fruit.tscn::PackedScene::1476150051301533861::1706066944::0::1::::<><>::res://fruit.gd<>uid://ojjopxkf8cmo::::res://suika/faces.png<>res://FruitSprite.gd
+FruitSprite.gd::GDScript::-1::1702428827::0::1::::<>AnimatedSprite2D<>::
+fruit_sprite.gd::GDScript::-1::1702426700::0::1::::<>AnimatedSprite2D<>::
+hud.gd::GDScript::-1::1702604603::0::1::::<>CanvasLayer<>::
+hud.tscn::PackedScene::1696902277194838087::1706066945::0::1::::<><>::res://hud.gd<>uid://c4frds7x6t8yx::::res://suika/bubble.png<>uid://cmnhshkb4ux61::::res://suika/suika ui reference.jpg<>uid://ojjopxkf8cmo::::res://suika/faces.png
+icon.png::CompressedTexture2D::4482877566231339280::1702438271::1702438272::1::::<><>::
+icon.svg::CompressedTexture2D::1126384639370983813::1700346779::1700346786::1::::<><>::
+main.gd::GDScript::-1::1706066944::0::1::::<>Node<>::
+main.tscn::PackedScene::3585041295860904299::1706066944::0::1::::<><>::uid://b37txbvg68313::::res://player.tscn<>res://main.gd<>uid://vbb8f486hooj::::res://fruit.tscn<>uid://cmnhshkb4ux61::::res://suika/suika ui reference.jpg<>uid://cx4ruwb6n6rdj::::res://suika/2023102323070800_s.webp<>uid://ccxq4w8tkwtvo::::res://suika/vlcsnap_2023_10_04_14h19m06s139.jpeg<>uid://ojjopxkf8cmo::::res://suika/faces.png<>res://FruitSprite.gd<>uid://cfawnq0gmfpgi::::res://box.tscn<>uid://yf8y54rsl1d8::::res://hud.tscn
+player.gd::GDScript::-1::1700639691::0::1::::<>Area2D<>::
+player.tscn::PackedScene::4418963175089908216::1706066944::0::1::::<><>::uid://dx6sg37t3u0d3::::res://suika/cloud.png<>res://player.gd
+preview.png::CompressedTexture2D::5134085802867873816::1702438271::1702438272::1::::<><>::
+README.md::TextFile::-1::1702438271::0::1::::<><>::
+wall.tscn::PackedScene::352073549431118424::1702430523::0::1::::<><>::
+::res://addons/::1702438271
+::res://addons/advanced_radial_menu/::1702438271
+icon.svg::CompressedTexture2D::3192132959927276159::1702438271::1702438271::1::::<><>::
+plugin.cfg::TextFile::-1::1702438271::0::1::::<><>::
+plugin.gd::GDScript::-1::1702438271::0::1::::<>EditorPlugin<>::
+radial_menu_class.gd::GDScript::-1::1702438271::0::1::::RadialMenuAdvanced<>Control<>res://addons/advanced_radial_menu/icon.svg::
+::res://suika/::1702436223
+2023102323070800_s.webp::CompressedTexture2D::6448120789169424539::1702073416::1702073417::1::::<><>::
+bubble.png::CompressedTexture2D::6819678263859455539::1702436166::1702436223::1::::<><>::
+cloud.png::CompressedTexture2D::8838706306752177702::1700371706::1700371706::1::::<><>::
+faces.png::CompressedTexture2D::1001795488611647494::1700371706::1700371706::1::::<><>::
+suika ui reference.jpg::CompressedTexture2D::5642401948281519268::1702025689::1702025705::1::::<><>::
+vlcsnap_2023_10_04_14h19m06s139.jpeg::CompressedTexture2D::4961724210282919828::1702073515::1702073516::1::::<><>::

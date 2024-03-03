@@ -1,0 +1,164 @@
+[gd_scene load_steps=18 format=3 uid="uid://vbb8f486hooj"]
+
+[ext_resource type="Script" path="res://fruit.gd" id="1_bwn46"]
+[ext_resource type="Texture2D" uid="uid://ojjopxkf8cmo" path="res://suika/faces.png" id="2_if2aq"]
+[ext_resource type="Script" path="res://FruitSprite.gd" id="3_csd2v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alkid"]
+friction = 0.12
+bounce = 0.3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqyhk"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3thh"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttw1l"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdxlo"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us3a7"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yveak"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmyyh"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyoy3"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khqwk"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fyrx"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iid67"]
+atlas = ExtResource("2_if2aq")
+region = Rect2(1000, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfs72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqyhk")
+}],
+"loop": true,
+"name": &"Apple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3thh")
+}],
+"loop": true,
+"name": &"Cherry",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttw1l")
+}],
+"loop": true,
+"name": &"Dekopon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdxlo")
+}],
+"loop": true,
+"name": &"Grape",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us3a7")
+}],
+"loop": true,
+"name": &"Melon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yveak")
+}],
+"loop": true,
+"name": &"Peach",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmyyh")
+}],
+"loop": true,
+"name": &"Pear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyoy3")
+}],
+"loop": true,
+"name": &"Persimmon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khqwk")
+}],
+"loop": true,
+"name": &"Pineapple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fyrx")
+}],
+"loop": true,
+"name": &"Strawberry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iid67")
+}],
+"loop": true,
+"name": &"Watermelon",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jr5oy"]
+radius = 45.0999
+
+[node name="fruit" type="RigidBody2D" groups=["fruit"]]
+physics_material_override = SubResource("PhysicsMaterial_alkid")
+max_contacts_reported = 5
+contact_monitor = true
+script = ExtResource("1_bwn46")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yfs72")
+animation = &"Apple"
+script = ExtResource("3_csd2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jr5oy")
+
+[connection signal="body_entered" from="." to="." method="_on_collision"]

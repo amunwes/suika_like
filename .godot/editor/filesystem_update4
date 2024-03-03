@@ -1,0 +1,7 @@
+res://main.tscn
+res://main.gd
+res://fruit.tscn
+res://player.tscn
+res://hud.tscn
+res://box.tscn
+res://addons/advanced_radial_menu/radial_menu_class.gd

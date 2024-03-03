@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfawnq0gmfpgi"]
+
+[ext_resource type="PackedScene" uid="uid://fasunrjofjy3" path="res://wall.tscn" id="1_vuu8r"]
+
+[node name="box" type="Node2D"]
+
+[node name="wall" parent="." instance=ExtResource("1_vuu8r")]
+position = Vector2(8, 245)
+scale = Vector2(2.3, 1)
+
+[node name="wall2" parent="." instance=ExtResource("1_vuu8r")]
+position = Vector2(236, 0)
+rotation = -1.5708
+scale = Vector2(2.5, 1)
+collision_priority = 10.0
+
+[node name="wall3" parent="." instance=ExtResource("1_vuu8r")]
+position = Vector2(-216, -9)
+rotation = 1.5708
+scale = Vector2(2.5, 1)

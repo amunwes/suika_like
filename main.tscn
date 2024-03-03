@@ -1,0 +1,228 @@
+[gd_scene load_steps=25 format=3 uid="uid://brcvdu7pa1v4n"]
+
+[ext_resource type="PackedScene" uid="uid://b37txbvg68313" path="res://player.tscn" id="1_1boxb"]
+[ext_resource type="Script" path="res://main.gd" id="1_k2b1h"]
+[ext_resource type="PackedScene" uid="uid://vbb8f486hooj" path="res://fruit.tscn" id="2_5okll"]
+[ext_resource type="Texture2D" uid="uid://cmnhshkb4ux61" path="res://suika/suika ui reference.jpg" id="3_heivb"]
+[ext_resource type="Texture2D" uid="uid://cx4ruwb6n6rdj" path="res://suika/2023102323070800_s.webp" id="5_gvvk6"]
+[ext_resource type="Texture2D" uid="uid://ccxq4w8tkwtvo" path="res://suika/vlcsnap_2023_10_04_14h19m06s139.jpeg" id="6_b6qa4"]
+[ext_resource type="Texture2D" uid="uid://ojjopxkf8cmo" path="res://suika/faces.png" id="8_2dv5f"]
+[ext_resource type="Script" path="res://FruitSprite.gd" id="9_v6dgo"]
+[ext_resource type="PackedScene" uid="uid://cfawnq0gmfpgi" path="res://box.tscn" id="10_gpvpv"]
+[ext_resource type="PackedScene" uid="uid://yf8y54rsl1d8" path="res://hud.tscn" id="10_y1fwn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6gr8h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqyhk"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3thh"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttw1l"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdxlo"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us3a7"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yveak"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmyyh"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyoy3"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khqwk"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fyrx"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iid67"]
+atlas = ExtResource("8_2dv5f")
+region = Rect2(1000, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d85fi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqyhk")
+}],
+"loop": true,
+"name": &"Apple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3thh")
+}],
+"loop": true,
+"name": &"Cherry",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttw1l")
+}],
+"loop": true,
+"name": &"Dekopon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdxlo")
+}],
+"loop": true,
+"name": &"Grape",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us3a7")
+}],
+"loop": true,
+"name": &"Melon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yveak")
+}],
+"loop": true,
+"name": &"Peach",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmyyh")
+}],
+"loop": true,
+"name": &"Pear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyoy3")
+}],
+"loop": true,
+"name": &"Persimmon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khqwk")
+}],
+"loop": true,
+"name": &"Pineapple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fyrx")
+}],
+"loop": true,
+"name": &"Strawberry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iid67")
+}],
+"loop": true,
+"name": &"Watermelon",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4qcbl"]
+normal = Vector2(-0.00408658, -0.999992)
+distance = 1.44037
+
+[node name="Main" type="Node"]
+script = ExtResource("1_k2b1h")
+fruit_scene = ExtResource("2_5okll")
+
+[node name="Hud" parent="." instance=ExtResource("10_y1fwn")]
+
+[node name="SuikaUiReference" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("3_heivb")
+
+[node name="2023102323070800S" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(639.5, 359.5)
+scale = Vector2(1.48721, 1.48554)
+texture = ExtResource("5_gvvk6")
+
+[node name="Vlcsnap2023100414h19m06s139" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 360.5)
+scale = Vector2(0.914286, 0.912437)
+texture = ExtResource("6_b6qa4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(0.380392, 0.843137, 0.65098, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_6gr8h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_1boxb")]
+position = Vector2(512, 59)
+scale = Vector2(2, 2)
+
+[node name="NextFruit" type="AnimatedSprite2D" parent="."]
+position = Vector2(1082, 186)
+sprite_frames = SubResource("SpriteFrames_d85fi")
+animation = &"Pineapple"
+script = ExtResource("9_v6dgo")
+
+[node name="CurrentFruit" type="AnimatedSprite2D" parent="."]
+position = Vector2(514, 108)
+sprite_frames = SubResource("SpriteFrames_d85fi")
+animation = &"Persimmon"
+script = ExtResource("9_v6dgo")
+
+[node name="DeadZone" type="Area2D" parent="."]
+position = Vector2(653, 719)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(-17, 0)
+scale = Vector2(6.51463, 5.11574)
+shape = SubResource("WorldBoundaryShape2D_4qcbl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(626, -368)
+rotation = -1.5708
+scale = Vector2(3.5, 5)
+shape = SubResource("WorldBoundaryShape2D_4qcbl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(-653, -367)
+rotation = 1.5708
+scale = Vector2(3.5, 5)
+shape = SubResource("WorldBoundaryShape2D_4qcbl")
+
+[node name="box" parent="." instance=ExtResource("10_gpvpv")]
+position = Vector2(630, 429)
+
+[connection signal="start_game" from="Hud" to="." method="new_game"]
+[connection signal="body_entered" from="DeadZone" to="Hud" method="_on_dead_zone_body_entered"]

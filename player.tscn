@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b37txbvg68313"]
+
+[ext_resource type="Texture2D" uid="uid://dx6sg37t3u0d3" path="res://suika/cloud.png" id="1_gobrc"]
+[ext_resource type="Script" path="res://player.gd" id="1_snkmh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsepv"]
+size = Vector2(76, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jyxpy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gobrc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_snkmh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_jsepv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jyxpy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 300.0
