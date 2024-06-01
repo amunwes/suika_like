@@ -49,6 +49,10 @@ func _on_hud_end_game():
 	$Hud/StartButton.show() 
 
 func _on_hud_start_game():
+	var PlayerName = $Hud/NameInput.get_text()
+	if (PlayerName):#check if text is truthy ie. not empty
+		SilentWolf.Scores.save_score(PlayerName, score)
+	$Hud/Leaderboard.update_board()
 	get_tree().call_group("fruit", "queue_free")
 	score = 0
 	$Hud.update_score(score)

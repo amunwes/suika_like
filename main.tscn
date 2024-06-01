@@ -198,7 +198,7 @@ script = ExtResource("9_v6dgo")
 [node name="CurrentFruit" type="AnimatedSprite2D" parent="."]
 position = Vector2(514, 108)
 sprite_frames = SubResource("SpriteFrames_d85fi")
-animation = &"Persimmon"
+animation = &"Apple"
 script = ExtResource("9_v6dgo")
 
 [node name="DeadZone" type="Area2D" parent="."]
@@ -225,6 +225,6 @@ shape = SubResource("WorldBoundaryShape2D_4qcbl")
 position = Vector2(630, 429)
 
 [connection signal="end_game" from="Hud" to="." method="_on_hud_end_game"]
-[connection signal="start_game" from="Hud" to="." method="new_game"]
 [connection signal="start_game" from="Hud" to="." method="_on_hud_start_game"]
+[connection signal="start_game" from="Hud" to="." method="new_game"]
 [connection signal="body_entered" from="DeadZone" to="Hud" method="_on_dead_zone_body_entered"]
