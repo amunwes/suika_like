@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsinook6ldkyj"]
+
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="1_ajuda"]
+
+[node name="Leaderboard" instance=ExtResource("1_ajuda")]
+
+[node name="Board" parent="." index="1"]
+offset_left = 3.0
+offset_top = 65.0
+offset_right = 603.0
+offset_bottom = 683.0
