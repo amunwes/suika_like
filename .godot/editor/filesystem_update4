@@ -1,13 +1,10 @@
-res://hud.tscn
+res://player.tscn
 res://addons/advanced_radial_menu/radial_menu_class.gd
 res://main.gd
 res://addons/silent_wolf/assets/themes/sw_theme.tres
+res://player.gd
 res://main.tscn
-res://fruit.tscn
-res://player.tscn
 res://box.tscn
-res://addons/silent_wolf/Scores/Leaderboard.tscn
+res://hud.tscn
 res://addons/silent_wolf/Scores/ScoreItem.tscn
-res://hud.gd
 res://board.tscn
-res://addons/silent_wolf/Scores/Leaderboard.gd
