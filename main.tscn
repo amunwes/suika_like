@@ -154,6 +154,8 @@ distance = 1.44037
 
 [node name="Main" type="Node"]
 script = ExtResource("1_k2b1h")
+curr_fruit_state = 6
+next_fruit_state = 5
 fruit_scene = ExtResource("2_5okll")
 
 [node name="Hud" parent="." instance=ExtResource("10_y1fwn")]
