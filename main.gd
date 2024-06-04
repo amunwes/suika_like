@@ -1,7 +1,7 @@
 extends Node
 
-@export var curr_fruit_state = randi_range(0,4)
-@export var next_fruit_state = randi_range(0,4)
+@export var curr_fruit_state: int = randi_range(0,4)
+@export var next_fruit_state: int = randi_range(0,4)
 @export var fruit_scene: PackedScene
 var curr_fruit
 var next_fruit
@@ -13,6 +13,8 @@ var scoring = {0:1, 1:3, 2:6, 3:10, 4:15, 5:21, 6:28, 7:36, 8:45, 9:55, 10:66}
 func _ready():
 	curr_fruit = get_node("CurrentFruit")
 	next_fruit = get_node("NextFruit")
+	curr_fruit.set_state(curr_fruit_state)
+	next_fruit.set_state(next_fruit_state)
 	_on_hud_end_game()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -20,7 +22,6 @@ func _process(_delta):
 	curr_fruit.position = pos
 	if Input.is_action_just_pressed("drop"):
 #		var new_rect = curr_fruit.get_sprite_frames()
-
 #		print(new_rect)
 		spawn_fruit(pos, curr_fruit_state)
 		curr_fruit_state = next_fruit_state
