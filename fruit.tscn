@@ -148,7 +148,8 @@ radius = 45.0999
 
 [node name="fruit" type="RigidBody2D" groups=["fruit"]]
 physics_material_override = SubResource("PhysicsMaterial_alkid")
-max_contacts_reported = 5
+continuous_cd = 1
+max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_bwn46")
 metadata/_edit_group_ = true
