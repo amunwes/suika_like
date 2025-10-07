@@ -1,17 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://brcvdu7pa1v4n"]
+[gd_scene load_steps=24 format=3 uid="uid://brcvdu7pa1v4n"]
 
 [ext_resource type="PackedScene" uid="uid://b37txbvg68313" path="res://player.tscn" id="1_1boxb"]
 [ext_resource type="Script" path="res://main.gd" id="1_k2b1h"]
 [ext_resource type="PackedScene" uid="uid://vbb8f486hooj" path="res://fruit.tscn" id="2_5okll"]
-[ext_resource type="Texture2D" uid="uid://cmnhshkb4ux61" path="res://suika/suika ui reference.jpg" id="3_heivb"]
-[ext_resource type="Texture2D" uid="uid://cx4ruwb6n6rdj" path="res://suika/2023102323070800_s.webp" id="5_gvvk6"]
-[ext_resource type="Texture2D" uid="uid://ccxq4w8tkwtvo" path="res://suika/vlcsnap_2023_10_04_14h19m06s139.jpeg" id="6_b6qa4"]
+[ext_resource type="Texture2D" uid="uid://c7uyaj0suhl4g" path="res://suika/new background.png" id="7_l0udx"]
 [ext_resource type="Texture2D" uid="uid://ojjopxkf8cmo" path="res://suika/faces.png" id="8_2dv5f"]
 [ext_resource type="Script" path="res://FruitSprite.gd" id="9_v6dgo"]
 [ext_resource type="PackedScene" uid="uid://cfawnq0gmfpgi" path="res://box.tscn" id="10_gpvpv"]
+[ext_resource type="AudioStream" uid="uid://cle1x27akvr4b" path="res://music/Kosmose Vaikus.mp3" id="10_v8n77"]
 [ext_resource type="PackedScene" uid="uid://yf8y54rsl1d8" path="res://hud.tscn" id="10_y1fwn"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_6gr8h"]
+[ext_resource type="PackedScene" uid="uid://dq42i0kj3sqnq" path="res://pause_menu.tscn" id="12_b4fos"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqyhk"]
 atlas = ExtResource("8_2dv5f")
@@ -158,50 +156,50 @@ fruit_scene = ExtResource("2_5okll")
 
 [node name="Hud" parent="." instance=ExtResource("10_y1fwn")]
 
-[node name="SuikaUiReference" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(640, 360)
-texture = ExtResource("3_heivb")
-
-[node name="2023102323070800S" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(639.5, 359.5)
-scale = Vector2(1.48721, 1.48554)
-texture = ExtResource("5_gvvk6")
-
-[node name="Vlcsnap2023100414h19m06s139" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(640, 360.5)
-scale = Vector2(0.914286, 0.912437)
-texture = ExtResource("6_b6qa4")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.380392, 0.843137, 0.65098, 1)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_6gr8h")
-metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+self_modulate = Color(0.870588, 0.486275, 0.32549, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_l0udx")
+expand_mode = 1
+
+[node name="box" parent="." instance=ExtResource("10_gpvpv")]
+position = Vector2(637, 344)
+scale = Vector2(0.389671, 0.830516)
 
 [node name="Player" parent="." instance=ExtResource("1_1boxb")]
+process_mode = 1
 position = Vector2(512, 59)
 scale = Vector2(2, 2)
 
 [node name="NextFruit" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 position = Vector2(1082, 186)
 sprite_frames = SubResource("SpriteFrames_d85fi")
-animation = &"Cherry"
+animation = &"Pear"
 script = ExtResource("9_v6dgo")
 
 [node name="CurrentFruit" type="AnimatedSprite2D" parent="."]
+process_mode = 1
 position = Vector2(512, 107)
 sprite_frames = SubResource("SpriteFrames_d85fi")
 animation = &"Cherry"
 script = ExtResource("9_v6dgo")
 
 [node name="DeadZone" type="Area2D" parent="."]
+visible = false
 position = Vector2(653, 719)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
@@ -221,10 +219,17 @@ rotation = 1.5708
 scale = Vector2(3.5, 5)
 shape = SubResource("WorldBoundaryShape2D_4qcbl")
 
-[node name="box" parent="." instance=ExtResource("10_gpvpv")]
-position = Vector2(630, 429)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("12_b4fos")]
+process_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_v8n77")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="end_game" from="Hud" to="." method="_on_hud_end_game"]
 [connection signal="start_game" from="Hud" to="." method="_on_hud_start_game"]
-[connection signal="start_game" from="Hud" to="." method="new_game"]
 [connection signal="body_entered" from="DeadZone" to="Hud" method="_on_dead_zone_body_entered"]

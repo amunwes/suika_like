@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjg1aci24s41u"]
+
+[ext_resource type="Script" path="res://splash_screen_manager.gd" id="1_gwdq5"]
+[ext_resource type="Texture2D" uid="uid://3sj26maxn02e" path="res://suika/jam_waffle_version_10001.png" id="1_makv7"]
+[ext_resource type="PackedScene" uid="uid://c8bvq5qam73d6" path="res://main_menu.tscn" id="2_dky0v"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen")]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwdq5")
+load_scene = ExtResource("2_dky0v")
+fade_in_time = 0.5
+pause_time = 1.0
+fade_out_time = 0.5
+splash_screen = NodePath("CenterContainer/TextureRect")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.545098, 1, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(259.4, 335.7)
+layout_mode = 2
+texture = ExtResource("1_makv7")
+expand_mode = 1

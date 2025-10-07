@@ -1,20 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfawnq0gmfpgi"]
+[gd_scene load_steps=3 format=3 uid="uid://cfawnq0gmfpgi"]
 
+[ext_resource type="Texture2D" uid="uid://comnyy2fod2y3" path="res://suika/new box.png" id="1_7svdw"]
 [ext_resource type="PackedScene" uid="uid://fasunrjofjy3" path="res://wall.tscn" id="1_vuu8r"]
 
 [node name="box" type="Node2D"]
 
-[node name="wall" parent="." instance=ExtResource("1_vuu8r")]
-position = Vector2(8, 245)
-scale = Vector2(2.3, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, 37)
+texture = ExtResource("1_7svdw")
 
-[node name="wall2" parent="." instance=ExtResource("1_vuu8r")]
-position = Vector2(236, 0)
-rotation = -1.5708
-scale = Vector2(2.5, 1)
-collision_priority = 10.0
+[node name="wall" parent="Sprite2D" instance=ExtResource("1_vuu8r")]
+visible = false
+position = Vector2(-8, 341)
+scale = Vector2(5.89409, 2.82335)
 
-[node name="wall3" parent="." instance=ExtResource("1_vuu8r")]
-position = Vector2(-216, -9)
+[node name="wall3" parent="Sprite2D" instance=ExtResource("1_vuu8r")]
+visible = false
+position = Vector2(-560, 69)
 rotation = 1.5708
-scale = Vector2(2.5, 1)
+scale = Vector2(2.7, 3.19999)
+
+[node name="wall4" parent="Sprite2D" instance=ExtResource("1_vuu8r")]
+visible = false
+position = Vector2(602, 69)
+rotation = 1.5708
+scale = Vector2(2.7, 3.19999)

@@ -10,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 	
 func show_message(text):
@@ -32,7 +32,7 @@ func _on_start_button_pressed():
 	
 	start_game.emit()
 
-func _on_dead_zone_body_entered(body):
+func _on_dead_zone_body_entered(_body):
 	show_message("Game Over")	
 	$MessageTimer.start()
 	$NameInput.show()

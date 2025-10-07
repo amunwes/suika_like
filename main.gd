@@ -8,7 +8,8 @@ var next_fruit
 var score = 0
 # value for combining each fruit, key is fruit state
 var scoring = {0:1, 1:3, 2:6, 3:10, 4:15, 5:21, 6:28, 7:36, 8:45, 9:55, 10:66}
-
+@onready var pause_menu = $CanvasLayer/PauseMenu
+var paused = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	curr_fruit = get_node("CurrentFruit")
@@ -28,6 +29,15 @@ func _process(_delta):
 		curr_fruit.set_state(curr_fruit_state)
 		next_fruit_state = randi_range(0,4)
 		next_fruit.set_state(next_fruit_state)
+	
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+
+func pauseMenu():
+	print("paused")
+	pause_menu.show()
+	get_tree().paused = !get_tree().paused
+	
 
 func enable_game(state):
 	set_process(state)

@@ -1,5 +1,4 @@
 res://main.tscn
-res://addons/advanced_radial_menu/radial_menu_class.gd
 res://main.gd
 res://addons/silent_wolf/assets/themes/sw_theme.tres
 res://player.tscn
@@ -7,3 +6,8 @@ res://box.tscn
 res://hud.tscn
 res://board.tscn
 res://fruit.tscn
+res://wall.tscn
+res://splash_screen_manager.tscn
+res://main_menu.tscn
+res://pause_menu.tscn
+res://pause_menu.gd
