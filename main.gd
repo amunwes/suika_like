@@ -34,7 +34,6 @@ func _process(_delta):
 		pauseMenu()
 
 func pauseMenu():
-	print("paused")
 	pause_menu.show()
 	get_tree().paused = !get_tree().paused
 	
